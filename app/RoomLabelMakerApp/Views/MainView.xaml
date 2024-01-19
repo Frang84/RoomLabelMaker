@@ -5,10 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RoomLabelMakerApp"
         mc:Ignorable="d"
-        Title="MainView" Height="450" Width="800">
+        Title="Room label maker" Height="450" Width="800">
     <Grid>
+        <!-- Lewy panel -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+            
 
-        <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding ExampleCommand}" CommandParameter="TEST VALUE" Height="117" Width="224"/>
+        </Grid.ColumnDefinitions>
 
+        <StackPanel Grid.Column="0" Margin="10">
+            <TextBlock Text="Pole tekstowe 1:"/>
+            <TextBox Width="200" Height="100" Margin="0,0,0,10"/>
+            <TextBlock Text="Pole tekstowe 2:"/>
+            <TextBox Width="200" Height="100"/>
+        </StackPanel>
+
+        <!-- Prawy panel -->
+        <Grid Grid.Column="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Pole tekstowe zamiast przycisku 1 -->
+            <StackPanel Grid.Row="0" Margin="5">
+                <TextBlock Text="Pole tekstowe 3:"/>
+                <TextBox Width="200" Height="30"/>
+            </StackPanel>
+
+            <!-- Pole tekstowe zamiast przycisku 2 -->
+            <StackPanel Grid.Row="1" Margin="5">
+                <TextBlock Text="Pole tekstowe 4:"/>
+                <TextBox Width="200" Height="200"/>
+            </StackPanel>
+
+            <Button Content="Load image" Margin="5" Grid.Row="2"/>
+            <Button Content="Save" Margin="5" Grid.Row="3"/>
+            <Button Content="Open" Margin="5" Grid.Row="4"/>
+            <Button Content="Print" Margin="5" Grid.Row="5"/>
+        </Grid>
     </Grid>
 </Window>
